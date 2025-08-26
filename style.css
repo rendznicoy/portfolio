@@ -190,7 +190,7 @@ section {
   border: 0.2rem solid #188c43;
   border-radius: 50%;
   color: #188c43;
-  margin: 0 15px;
+  margin: 5px 15px;
   font-size: 1.5rem;
   transition: all 0.2s linear;
 }
@@ -267,7 +267,8 @@ section {
 @media (max-width: 440px) {
   .main-container .image {
     width: 50%;
-    height: 40%;
+    height: 60%;
+    margin-bottom: 30px;
   }
 
   .main-container .content {
