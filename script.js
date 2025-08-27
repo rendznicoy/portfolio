@@ -288,15 +288,15 @@ document.querySelectorAll("img").forEach((img) => {
 // Add scroll progress indicator
 const progressBar = document.createElement("div");
 progressBar.style.cssText = `
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background: linear-gradient(90deg, #188c43, #0f5a28);
-            z-index: 10001;
-            transition: width 0.1s ease;
-        `;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, #ffffff, #e0e0e0);
+    z-index: 10001;
+    transition: width 0.1s ease;
+`;
 document.body.appendChild(progressBar);
 
 window.addEventListener("scroll", () => {
