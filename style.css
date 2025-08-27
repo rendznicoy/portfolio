@@ -10,7 +10,7 @@
 
 body {
   width: 100%;
-  background: linear-gradient(135deg, #000000 0%, #0a0a0a 50%, #1a1a1a 100%);
+  background: linear-gradient(135deg, #000000 0%, #0f0f0f 50%, #1a1a1a 100%);
   color: white;
   overflow-x: hidden;
 }
@@ -23,13 +23,13 @@ nav {
   z-index: 1000;
   background: rgba(0, 0, 0, 0.9);
   backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(24, 140, 67, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 nav.scrolled {
   background: rgba(0, 0, 0, 0.95);
-  box-shadow: 0 5px 20px rgba(24, 140, 67, 0.1);
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.05);
 }
 
 .nav-container {
@@ -56,14 +56,14 @@ nav.scrolled {
 }
 
 .logo span {
-  color: #188c43;
-  text-shadow: 0 0 15px rgba(24, 140, 67, 0.5);
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   position: relative;
 }
 
 .hamburger,
 .cancel {
-  color: white;
+  color: #ffffff;
   font-size: 1.5rem;
   cursor: pointer;
   display: none;
@@ -99,7 +99,7 @@ nav.scrolled {
   bottom: -2px;
   left: 50%;
   transform: translateX(-50%);
-  background: linear-gradient(90deg, transparent, #188c43, transparent);
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
   transition: all 0.3s ease;
 }
 
@@ -108,8 +108,8 @@ nav.scrolled {
 }
 
 .nav-container .links .link a:hover {
-  color: #188c43;
-  text-shadow: 0 0 10px rgba(24, 140, 67, 0.5);
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
 .dropdown {
@@ -153,9 +153,9 @@ nav.scrolled {
 }
 
 .dropdown .links a:hover {
-  color: #188c43;
-  border-color: #188c43;
-  background: rgba(24, 140, 67, 0.1);
+  color: #ffffff;
+  border-color: #ffffff;
+  background: rgba(255, 255, 255, 0.05);
   transform: translateY(-5px);
 }
 
@@ -176,10 +176,12 @@ nav.scrolled {
   position: relative;
   background: radial-gradient(
     ellipse at center,
-    rgba(24, 140, 67, 0.1) 0%,
+    rgba(255, 255, 255, 0.03) 0%,
     transparent 70%
   );
 }
+
+/*With SVG particle fx*/
 
 .hero-section::before {
   content: "";
@@ -188,7 +190,7 @@ nav.scrolled {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="%23188c43" opacity="0.1"/><circle cx="75" cy="75" r="0.5" fill="%23188c43" opacity="0.1"/><circle cx="50" cy="10" r="0.3" fill="%23188c43" opacity="0.08"/><circle cx="10" cy="60" r="0.4" fill="%23188c43" opacity="0.06"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="0.5" fill="%23ffffff" opacity="0.08"/><circle cx="75" cy="75" r="0.5" fill="%23ffffff" opacity="0.08"/><circle cx="50" cy="10" r="0.3" fill="%23ffffff" opacity="0.06"/><circle cx="10" cy="60" r="0.4" fill="%23ffffff" opacity="0.04"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
   opacity: 0.3;
   pointer-events: none;
 }
@@ -218,7 +220,7 @@ nav.scrolled {
   height: 120%;
   border: 2px solid transparent;
   border-radius: 50%;
-  background: linear-gradient(45deg, #188c43, transparent, #188c43);
+  background: linear-gradient(45deg, #ffffff, transparent, #ffffff);
   background-size: 400% 400%;
   animation: borderRotate 3s ease-in-out infinite;
   z-index: -1;
@@ -229,17 +231,17 @@ nav.scrolled {
   height: 400px;
   border-radius: 50%;
   object-fit: cover;
-  border: 5px solid rgba(24, 140, 67, 0.3);
-  box-shadow: 0 0 50px rgba(24, 140, 67, 0.3),
-    inset 0 0 50px rgba(24, 140, 67, 0.1);
+  border: 5px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 0 50px rgba(255, 255, 255, 0.1),
+    inset 0 0 50px rgba(255, 255, 255, 0.05);
   transition: all 0.5s ease;
   position: relative;
 }
 
 .image:hover img {
   transform: scale(1.05);
-  box-shadow: 0 0 80px rgba(24, 140, 67, 0.5),
-    inset 0 0 50px rgba(24, 140, 67, 0.2);
+  box-shadow: 0 0 80px rgba(255, 255, 255, 0.2),
+    inset 0 0 50px rgba(255, 255, 255, 0.1);
 }
 
 @keyframes borderRotate {
@@ -264,8 +266,8 @@ nav.scrolled {
 }
 
 .content h1 span {
-  color: #188c43;
-  text-shadow: 0 0 20px rgba(24, 140, 67, 0.5);
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
   position: relative;
 }
 
@@ -279,8 +281,8 @@ nav.scrolled {
 }
 
 .typewritter-text {
-  color: #188c43;
-  text-shadow: 0 0 15px rgba(24, 140, 67, 0.5);
+  color: #ffffff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
   position: relative;
 }
 
@@ -320,10 +322,10 @@ nav.scrolled {
   align-items: center;
   width: 50px;
   height: 50px;
-  background: rgba(24, 140, 67, 0.1);
-  border: 2px solid rgba(24, 140, 67, 0.3);
+  background: rgba(255, 255, 255, 0.05);
+  border: 2px solid rgba(255, 255, 255, 0.2);
   border-radius: 50%;
-  color: #188c43;
+  color: #ffffff;
   font-size: 1.2rem;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -341,7 +343,7 @@ nav.scrolled {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(24, 140, 67, 0.3),
+    rgba(255, 255, 255, 0.1),
     transparent
   );
   transition: all 0.5s ease;
@@ -353,9 +355,9 @@ nav.scrolled {
 
 .social-links a:hover {
   transform: translateY(-5px);
-  background: rgba(24, 140, 67, 0.2);
-  border-color: #188c43;
-  box-shadow: 0 10px 25px rgba(24, 140, 67, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  border-color: #ffffff;
+  box-shadow: 0 10px 25px rgba(255, 255, 255, 0.1);
 }
 
 .btn {
@@ -364,8 +366,8 @@ nav.scrolled {
 
 .btn button {
   padding: 15px 35px;
-  background: linear-gradient(135deg, #188c43, #0f5a28);
-  color: white;
+  background: linear-gradient(135deg, #ffffff, #e0e0e0);
+  color: #000000;
   border: none;
   border-radius: 50px;
   font-size: 1.1rem;
@@ -374,7 +376,7 @@ nav.scrolled {
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  box-shadow: 0 5px 20px rgba(24, 140, 67, 0.3);
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
 }
 
 .btn button::before {
@@ -399,13 +401,13 @@ nav.scrolled {
 
 .btn button:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(24, 140, 67, 0.4);
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.15);
 }
 
 /*About*/
 .about-section {
   padding: 100px 2rem;
-  background: rgba(24, 140, 67, 0.02);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .section-title {
@@ -413,8 +415,8 @@ nav.scrolled {
   font-size: clamp(2rem, 4vw, 3rem);
   font-weight: 700;
   margin-bottom: 3rem;
-  color: #188c43;
-  text-shadow: 0 0 20px rgba(24, 140, 67, 0.3);
+  color: #ffffff;
+  text-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
   position: relative;
 }
 
@@ -426,7 +428,7 @@ nav.scrolled {
   transform: translateX(-50%);
   width: 80px;
   height: 3px;
-  background: linear-gradient(90deg, transparent, #188c43, transparent);
+  background: linear-gradient(90deg, transparent, #ffffff, transparent);
 }
 
 .about-container {
@@ -446,19 +448,19 @@ nav.scrolled {
   width: 100%;
   max-width: 350px;
   border-radius: 20px;
-  border: 3px solid rgba(24, 140, 67, 0.3);
+  border: 3px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   transition: all 0.3s ease;
 }
 
 .about-image img:hover {
   transform: scale(1.05);
-  box-shadow: 0 25px 50px rgba(24, 140, 67, 0.2);
+  box-shadow: 0 25px 50px rgba(255, 255, 255, 0.1);
 }
 
 .about-content h3 {
   font-size: 1.8rem;
-  color: #188c43;
+  color: #ffffff;
   margin-bottom: 1rem;
 }
 
@@ -481,21 +483,21 @@ nav.scrolled {
   align-items: center;
   gap: 1rem;
   padding: 1rem;
-  background: rgba(24, 140, 67, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
-  border: 1px solid rgba(24, 140, 67, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 .highlight:hover {
   transform: translateY(-3px);
-  background: rgba(24, 140, 67, 0.15);
-  box-shadow: 0 5px 15px rgba(24, 140, 67, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
 }
 
 .highlight i {
   font-size: 1.5rem;
-  color: #188c43;
+  color: #ffffff;
   min-width: 24px;
 }
 
@@ -526,7 +528,12 @@ nav.scrolled {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(180deg, #188c43, rgba(24, 140, 67, 0.3), #188c43);
+  background: linear-gradient(
+    180deg,
+    #ffffff,
+    rgba(255, 255, 255, 0.3),
+    #ffffff
+  );
   transform: translateX(-50%);
 }
 
@@ -547,34 +554,34 @@ nav.scrolled {
   top: 2rem;
   width: 20px;
   height: 20px;
-  background: #188c43;
+  background: #ffffff;
   border-radius: 50%;
   border: 4px solid black;
   transform: translateX(-50%);
   z-index: 1;
-  box-shadow: 0 0 20px rgba(24, 140, 67, 0.5);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
 }
 
 .timeline-content {
   flex: 1;
-  background: rgba(24, 140, 67, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   padding: 2rem;
   border-radius: 15px;
   margin: 0 2rem;
-  border: 1px solid rgba(24, 140, 67, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 .timeline-content:hover {
   transform: translateY(-5px);
-  background: rgba(24, 140, 67, 0.15);
-  box-shadow: 0 15px 35px rgba(24, 140, 67, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
 }
 
 .timeline-year {
   font-size: 1rem;
   font-weight: 600;
-  color: #188c43;
+  color: #ffffff;
   margin-bottom: 0.5rem;
 }
 
@@ -605,11 +612,11 @@ nav.scrolled {
 }
 
 .skill-tag {
-  background: rgba(24, 140, 67, 0.15);
+  background: rgba(255, 255, 255, 0.08);
   color: white;
   padding: 0.6rem 1.2rem;
   border-radius: 25px;
-  border: 1px solid rgba(24, 140, 67, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   font-size: 0.9rem;
   font-weight: 500;
   transition: all 0.3s ease;
@@ -627,7 +634,7 @@ nav.scrolled {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(24, 140, 67, 0.3),
+    rgba(255, 255, 255, 0.1),
     transparent
   );
   transition: all 0.5s ease;
@@ -638,16 +645,16 @@ nav.scrolled {
 }
 
 .skill-tag:hover {
-  background: rgba(24, 140, 67, 0.25);
-  border-color: #188c43;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: #ffffff;
   transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(24, 140, 67, 0.3);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
   color: #ffffff;
 }
 
 .skills-section {
   padding: 100px 2rem;
-  background: rgba(24, 140, 67, 0.02);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .skills-container {
@@ -662,30 +669,35 @@ nav.scrolled {
 }
 
 .skill-category {
-  background: rgba(24, 140, 67, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   padding: 2rem;
   border-radius: 20px;
-  border: 1px solid rgba(24, 140, 67, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 .skill-category:hover {
   transform: translateY(-5px);
-  background: rgba(24, 140, 67, 0.15);
-  box-shadow: 0 15px 35px rgba(24, 140, 67, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.1);
 }
 
 .skill-category h3 {
-  color: #188c43;
+  color: #ffffff;
   font-size: 1.4rem;
   margin-bottom: 1.5rem;
   text-align: center;
 }
 
+/* Progress bar */
+.progressBar {
+  background: linear-gradient(90deg, #ffffff, #e0e0e0) !important;
+}
+
 /* Projects Section */
 .projects-section {
   padding: 100px 2rem;
-  background: rgba(24, 140, 67, 0.02);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .projects-container {
@@ -701,18 +713,18 @@ nav.scrolled {
 }
 
 .project-card {
-  background: rgba(24, 140, 67, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(24, 140, 67, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   position: relative;
 }
 
 .project-card:hover {
   transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(24, 140, 67, 0.2);
-  background: rgba(24, 140, 67, 0.15);
+  box-shadow: 0 25px 50px rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .project-image {
@@ -761,10 +773,10 @@ nav.scrolled {
   align-items: center;
   width: 50px;
   height: 50px;
-  background: rgba(24, 140, 67, 0.2);
-  border: 2px solid #188c43;
+  background: rgba(255, 255, 255, 0.1);
+  border: 2px solid #ffffff;
   border-radius: 50%;
-  color: #188c43;
+  color: #ffffff;
   font-size: 1.2rem;
   text-decoration: none;
   transition: all 0.3s ease;
@@ -791,8 +803,8 @@ nav.scrolled {
 }
 
 .project-link:hover {
-  background: #188c43;
-  color: white;
+  background: #ffffff;
+  color: black;
   transform: scale(1.1);
 }
 
@@ -802,8 +814,8 @@ nav.scrolled {
 
 .project-category {
   display: inline-block;
-  background: rgba(24, 140, 67, 0.2);
-  color: #188c43;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   padding: 0.3rem 1rem;
   border-radius: 15px;
   font-size: 0.8rem;
@@ -839,14 +851,14 @@ nav.scrolled {
   padding: 0.4rem 0.8rem;
   border-radius: 15px;
   font-size: 0.8rem;
-  border: 1px solid rgba(24, 140, 67, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   transition: all 0.3s ease;
 }
 
 .tech-tag:hover {
-  background: rgba(24, 140, 67, 0.2);
-  color: #188c43;
-  border-color: #188c43;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  border-color: #ffffff;
 }
 
 /* Services Section */
@@ -866,11 +878,11 @@ nav.scrolled {
 }
 
 .service-card {
-  background: rgba(24, 140, 67, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   padding: 2.5rem 2rem;
   border-radius: 20px;
   text-align: center;
-  border: 1px solid rgba(24, 140, 67, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
@@ -886,7 +898,7 @@ nav.scrolled {
   background: linear-gradient(
     90deg,
     transparent,
-    rgba(24, 140, 67, 0.1),
+    rgba(255, 255, 255, 0.05),
     transparent
   );
   transition: all 0.5s ease;
@@ -898,13 +910,13 @@ nav.scrolled {
 
 .service-card:hover {
   transform: translateY(-10px);
-  background: rgba(24, 140, 67, 0.15);
-  box-shadow: 0 20px 40px rgba(24, 140, 67, 0.2);
+  background: rgba(255, 255, 255, 0.08);
+  box-shadow: 0 20px 40px rgba(255, 255, 255, 0.1);
 }
 
 .service-icon {
   font-size: 3rem;
-  color: #188c43;
+  color: #ffffff;
   margin-bottom: 1.5rem;
   position: relative;
 }
@@ -924,7 +936,7 @@ nav.scrolled {
 /* Contact Section */
 .contact-section {
   padding: 100px 2rem;
-  background: rgba(24, 140, 67, 0.02);
+  background: rgba(255, 255, 255, 0.02);
 }
 
 .contact-container {
@@ -936,7 +948,7 @@ nav.scrolled {
 }
 
 .contact-info h3 {
-  color: #188c43;
+  color: #ffffff;
   font-size: 1.5rem;
   margin-bottom: 2rem;
 }
@@ -946,29 +958,29 @@ nav.scrolled {
   align-items: center;
   margin-bottom: 1.5rem;
   padding: 1rem;
-  background: rgba(24, 140, 67, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
-  border: 1px solid rgba(24, 140, 67, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.3s ease;
 }
 
 .contact-item:hover {
-  background: rgba(24, 140, 67, 0.15);
+  background: rgba(255, 255, 255, 0.08);
   transform: translateX(10px);
 }
 
 .contact-item i {
   font-size: 1.3rem;
-  color: #188c43;
+  color: #ffffff;
   margin-right: 1rem;
   width: 30px;
 }
 
 .contact-form {
-  background: rgba(24, 140, 67, 0.1);
+  background: rgba(255, 255, 255, 0.05);
   padding: 2.5rem;
   border-radius: 20px;
-  border: 1px solid rgba(24, 140, 67, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .form-group {
@@ -978,7 +990,7 @@ nav.scrolled {
 .form-group label {
   display: block;
   margin-bottom: 0.5rem;
-  color: #188c43;
+  color: #ffffff;
   font-weight: 500;
 }
 
@@ -986,9 +998,9 @@ nav.scrolled {
 .form-group textarea {
   width: 100%;
   padding: 15px;
-  border: 1px solid rgba(24, 140, 67, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(255, 255, 255, 0.05);
   color: white;
   font-size: 1rem;
   transition: all 0.3s ease;
@@ -997,18 +1009,18 @@ nav.scrolled {
 .form-group input:focus,
 .form-group textarea:focus {
   outline: none;
-  border-color: #188c43;
-  box-shadow: 0 0 20px rgba(24, 140, 67, 0.3);
-  background: rgba(24, 140, 67, 0.1);
+  border-color: #ffffff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.08);
 }
 
 .submit-btn {
   width: 100%;
   padding: 15px;
-  background: linear-gradient(135deg, #188c43, #0f5a28);
+  background: linear-gradient(135deg, #ffffff, #e0e0e0);
   border: none;
   border-radius: 10px;
-  color: white;
+  color: #000000;
   font-size: 1.1rem;
   font-weight: 600;
   cursor: pointer;
@@ -1039,7 +1051,7 @@ nav.scrolled {
 
 .submit-btn:hover {
   transform: translateY(-3px);
-  box-shadow: 0 15px 35px rgba(24, 140, 67, 0.4);
+  box-shadow: 0 15px 35px rgba(255, 255, 255, 0.15);
 }
 
 /* Footer */
@@ -1047,7 +1059,7 @@ nav.scrolled {
   background: rgba(0, 0, 0, 0.8);
   padding: 2rem;
   text-align: center;
-  border-top: 1px solid rgba(24, 140, 67, 0.2);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .footer p {
@@ -1056,7 +1068,7 @@ nav.scrolled {
 }
 
 .footer span {
-  color: #188c43;
+  color: #ffffff;
 }
 
 /* Responsive Design */
@@ -1184,8 +1196,8 @@ nav.scrolled {
   right: 2rem;
   width: 50px;
   height: 50px;
-  background: linear-gradient(135deg, #188c43, #0f5a28);
-  color: white;
+  background: linear-gradient(135deg, #ffffff, #e0e0e0);
+  color: #000000;
   border: none;
   border-radius: 50%;
   cursor: pointer;
@@ -1195,7 +1207,7 @@ nav.scrolled {
   font-size: 1.2rem;
   transition: all 0.3s ease;
   z-index: 100;
-  box-shadow: 0 5px 20px rgba(24, 140, 67, 0.3);
+  box-shadow: 0 5px 20px rgba(255, 255, 255, 0.1);
 }
 
 .scroll-top.show {
@@ -1204,7 +1216,7 @@ nav.scrolled {
 
 .scroll-top:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 30px rgba(24, 140, 67, 0.4);
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.15);
 }
 
 /* Loading animation */
