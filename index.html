@@ -24,32 +24,32 @@
 
             <div class="links">
                 <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="100">
-                    <a href="#">
+                    <a href="#home">
                         Home
                     </a>
                 </div>
                 <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="200">
-                    <a href="#">
+                    <a href="#about">
                         About
                     </a>
                 </div>
                 <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="300">
-                    <a href="#">
+                    <a href="#education">
                         Education
                     </a>
                 </div>
                 <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="400">
-                    <a href="#">
+                    <a href="#skills">
                         Skills
                     </a>
                 </div>
                 <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="500">
-                    <a href="#">
+                    <a href="#services">
                         Services
                     </a>
                 </div>
                 <div class="link" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="600">
-                    <a href="#">
+                    <a href="#contact">
                         Contact
                     </a>
                 </div>
@@ -58,63 +58,66 @@
         </div>
         <div class="dropdown">
             <div class="links">
-                <a href="#">
+                <a href="#home" onclick="closeDropdown()">
                     Home
                 </a>
-                <a href="#">
+                <a href="#about" onclick="closeDropdown()">
                     About
                 </a>
-                <a href="#">
+                <a href="#education" onclick="closeDropdown()">
                     Education
                 </a>
-                <a href="#">
+                <a href="#skills" onclick="closeDropdown()">
                     Skills
                 </a>
-                <a href="#">
+                <a href="#services" onclick="closeDropdown()">
                     Services
                 </a>
-                <a href="#">
+                <a href="#contact" onclick="closeDropdown()">
                     Contact
                 </a>
                 <i class="fa-solid fa-xmark cancel" onclick="closeDropdown()"></i>
             </div>
         </div>
     </nav>
-    <section>
+
+    <!-- Hero Section -->
+    <section class="hero-section" id="home">
         <div class="main-container">
             <div class="image" data-aos="zoom-out" data-aos-duration="3000">
-                <img src="main.jpg" alt="">
+                <img src="main.jpg" alt="Rene Angelo">
             </div>
             <div class="content">
                 <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700">Hey I'm <span>Rene</span></h1>
                 <div class="typewritter" data-aos="fade-right" data-aos-duration="1500" data-aos-delay="900">
                     I'm a
-                    <span class="typewritter-text">
+                    <span class="typewritter-text" id="typewritter">
                     </span>
-                    <label for="">
-
-                    </label>
                 </div>
-                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">Lorem ipsum, dolor sit amet
-                    consectetur adipisicing elit. Nemo sapiente illo a vero quaerat dicta
-                    nihil repellendus ipsam at soluta eum facilis aut sed dolorum, aliquam blanditiis aliquid in
-                    architecto.</p>
+                <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">
+                    Passionate full-stack developer, UI/UX designer, freelancer, and creative problem solver with
+                    expertise in modern web technologies.
+                    I transform ideas into engaging digital experiences through clean code, innovative design, and
+                    user-centered thinking.
+                </p>
                 <div class="social-links">
-                    <a href="#" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1300"><i
-                            class="fa-brands fa-github"></i></a>
-                    <a href="#" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1400"><i
-                            class="fa-brands fa-linkedin"></i></a>
-                    <a href="#" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1500"><i
-                            class="fa-brands fa-facebook"></i></a>
-                    <a href="#" data-aos="fade-up" data-aos-duration="1500" data-aos-delay="1600"><i
-                            class="fa-brands fa-instagram"></i></a>
+                    <a href="https://github.com/rendznicoy" data-aos="fade-up" data-aos-duration="1500" target="_blank"
+                        data-aos-delay="1300"><i class="fa-brands fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/rainyjane" data-aos="fade-up" data-aos-duration="1500"
+                        target="_blank" data-aos-delay="1400"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="https://www.facebook.com/rainyjne" data-aos="fade-up" data-aos-duration="1500"
+                        target="_blank" data-aos-delay="1500"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/rainyjne" data-aos="fade-up" data-aos-duration="1500"
+                        target="_blank" data-aos-delay="1600"><i class="fa-brands fa-instagram"></i></a>
                 </div>
                 <div class="btn" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="1800">
-                    <button>Hire me</button>
+                    <button onclick="document.getElementById('contact'.scrollIntoView())">Hire me</button>
                 </div>
             </div>
         </div>
     </section>
+
+
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init({ offset: 0 });
