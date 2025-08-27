@@ -19,34 +19,73 @@ window.addEventListener("load", () => {
 // Navigation scroll effect
 window.addEventListener("scroll", () => {
   const navbar = document.getElementById("navbar");
-  const scrollTop = document.getElementById("scrollTop");
 
   if (window.scrollY > 100) {
     navbar.classList.add("scrolled");
-    scrollTop.classList.add("show");
   } else {
     navbar.classList.remove("scrolled");
-    scrollTop.classList.remove("show");
   }
 });
 
 // Mobile navigation
-function toggleDropdown() {
-  const dropdown = document.getElementById("dropdown");
-  dropdown.classList.toggle("active");
-}
+document.addEventListener("DOMContentLoaded", function () {
+  const hamburger = document.querySelector(".hamburger");
+  const dropdown = document.querySelector(".dropdown");
+  const cancel = document.querySelector(".cancel");
+  const body = document.body;
 
-function closeDropdown() {
-  const dropdown = document.getElementById("dropdown");
-  dropdown.classList.remove("active");
-}
+  // Toggle dropdown
+  function toggleDropdown() {
+    if (dropdown) {
+      dropdown.classList.toggle("active");
+      if (dropdown.classList.contains("active")) {
+        body.style.overflow = "hidden";
+      } else {
+        body.style.overflow = "auto";
+      }
+    }
+  }
+
+  // Close dropdown
+  window.closeDropdown = function () {
+    if (dropdown) {
+      dropdown.classList.remove("active");
+      body.style.overflow = "auto";
+    }
+  };
+
+  // Event listeners
+  if (hamburger) {
+    hamburger.addEventListener("click", toggleDropdown);
+  }
+
+  if (cancel) {
+    cancel.addEventListener("click", closeDropdown);
+  }
+
+  // Close dropdown when clicking on navigation links
+  const dropdownLinks = document.querySelectorAll(".dropdown .links a");
+  dropdownLinks.forEach((link) => {
+    link.addEventListener("click", closeDropdown);
+  });
+
+  // Close when clicking outside
+  if (dropdown) {
+    dropdown.addEventListener("click", (e) => {
+      if (e.target === dropdown) {
+        closeDropdown();
+      }
+    });
+  }
+});
 
 // Typewritter Effect
 
-const typewriter = document.getElementById("typewriter");
+const typewriter = document.getElementById("typewritter");
 const words = [
   "Full Stack Developer",
   "UI/UX Designer",
+  "Freelancer",
   "Problem Solver",
   "Tech Enthusiast",
 ];
@@ -55,6 +94,8 @@ let charIndex = 0;
 let isDeleting = false;
 
 function typeWrite() {
+  if (!typewriter) return; // Safety check
+
   const currentWord = words[wordIndex];
 
   if (isDeleting) {
@@ -244,15 +285,8 @@ setInterval(() => {
   }
 }, 500);
 
-// Enhanced mobile menu functionality
-const hamburger = document.querySelector(".hamburger");
-const dropdown = document.getElementById("dropdown");
+// Mobile menu functionality
 const body = document.body;
-
-hamburger.addEventListener("click", () => {
-  dropdown.classList.add("active");
-  body.style.overflow = "hidden";
-});
 
 document.querySelector(".cancel").addEventListener("click", () => {
   dropdown.classList.remove("active");
@@ -351,4 +385,4 @@ rippleStyle.textContent = `
 document.head.appendChild(rippleStyle);
 
 console.log("Rene Angelo Portfolio - Loaded Successfully!");
-console.log("Enhanced with modern UI/UX features");
+console.log("Typewriter effect fixed for mobile!");

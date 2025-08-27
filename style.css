@@ -187,7 +187,7 @@ nav.scrolled {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0 2rem;
+  padding: 120px 2rem 0;
   position: relative;
   background: radial-gradient(
     ellipse at center,
@@ -231,13 +231,17 @@ nav.scrolled {
 .image::before {
   content: "";
   position: absolute;
-  width: 120%;
-  height: 120%;
+  width: 110%;
+  height: 110%;
   border: 2px solid transparent;
   border-radius: 50%;
-  background: linear-gradient(45deg, #ffffff, transparent, #ffffff);
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.1) 0%,
+    transparent 70%
+  );
   background-size: 400% 400%;
-  animation: borderRotate 3s ease-in-out infinite;
+  animation: pulse 3s ease-in-out infinite alternate;
   z-index: -1;
 }
 
@@ -259,13 +263,15 @@ nav.scrolled {
     inset 0 0 50px rgba(255, 255, 255, 0.1);
 }
 
-@keyframes borderRotate {
+@keyframes pulse {
   0%,
   100% {
-    background-position: 0% 50%;
+    opacity: 0.3;
+    transform: scale(1);
   }
   50% {
-    background-position: 100% 50%;
+    opacity: 0.6;
+    transform: scale(1.02);
   }
 }
 
@@ -549,7 +555,6 @@ nav.scrolled {
     rgba(255, 255, 255, 0.3),
     #ffffff
   );
-  transform: translateX(-50%);
 }
 
 .timeline-item {
@@ -616,6 +621,16 @@ nav.scrolled {
   font-size: 0.9rem;
   line-height: 1.6;
   opacity: 0.8;
+}
+
+/* Work Section */
+.work-section {
+  padding: 100px 2rem;
+}
+
+.work-container {
+  max-width: 1000px;
+  margin: 0 auto;
 }
 
 /* Skills Section */
@@ -1088,6 +1103,68 @@ nav.scrolled {
 
 /* Responsive Design */
 @media (max-width: 884px) {
+  .cancel {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .cancel:hover {
+    color: #ffffff;
+    transform: scale(1.1);
+  }
+
+  .dropdown {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.95);
+    backdrop-filter: blur(20px);
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+    opacity: 0;
+    transition: all 0.3s ease;
+  }
+
+  .dropdown.active {
+    display: flex;
+    opacity: 1;
+  }
+
+  .dropdown .links {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .dropdown .links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 1rem 2rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    border: 1px solid transparent;
+  }
+
+  .dropdown .links a:hover {
+    color: #ffffff;
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-5px);
+  }
+
   .projects-grid {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
@@ -1099,6 +1176,15 @@ nav.scrolled {
 
   .hamburger {
     display: block;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+
+  .hamburger:hover {
+    color: #ffffff;
+    transform: scale(1.1);
   }
 
   .nav-container .links {
@@ -1156,6 +1242,11 @@ nav.scrolled {
   .about-highlights {
     grid-template-columns: 1fr;
   }
+
+  .typewritter {
+    text-align: center;
+    justify-content: center;
+  }
 }
 
 @media (max-width: 440px) {
@@ -1181,7 +1272,7 @@ nav.scrolled {
   .skills-section,
   .services-section,
   .contact-section {
-    padding: 80px 1rem;
+    padding: 120px 1rem 0;
   }
 
   .image img {
