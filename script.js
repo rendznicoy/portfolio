@@ -16,10 +16,19 @@ window.addEventListener("load", () => {
   }, 1000);
 });
 
-// Navigation scroll effect
+// Show/hide scroll to top button based on scroll position
 window.addEventListener("scroll", () => {
+  const scrollTop = document.getElementById("scrollTop");
   const navbar = document.getElementById("navbar");
 
+  // Show button when scrolled down 300px
+  if (window.scrollY > 300) {
+    scrollTop.classList.add("show");
+  } else {
+    scrollTop.classList.remove("show");
+  }
+
+  // Navbar scroll effect (existing code)
   if (window.scrollY > 100) {
     navbar.classList.add("scrolled");
   } else {
@@ -167,39 +176,269 @@ document.getElementById("scrollTop").addEventListener("click", () => {
   });
 });
 
-// Form submission
-document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+// Custom Email Toast Function
+function showEmailToast(event) {
+  event.preventDefault();
 
-  // Get form data
-  const formData = new FormData(this);
-  const name = formData.get("name");
-  const email = formData.get("email");
-  const subject = formData.get("subject");
-  const message = formData.get("message");
+  const emailAddress = "rendzdelosreyes@gmail.com";
+  const container = document.querySelector(".toast-container");
 
-  // Simple form validation
-  if (!name || !email || !subject || !message) {
-    alert("Please fill in all fields");
-    return;
-  }
+  const emailToast = document.createElement("div");
+  emailToast.className = "toast email-toast show";
 
-  // Simulate form submission
-  const submitBtn = document.querySelector(".submit-btn");
-  const originalText = submitBtn.innerHTML;
+  emailToast.innerHTML = `
+    <div class="email-toast-content">
+      <div class="email-toast-header">
+        <i class="fas fa-envelope email-toast-icon"></i>
+        <h4 class="email-toast-title">Get in Touch</h4>
+        <button class="toast-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="email-toast-body">
+        Ready to collaborate or have a question? Feel free to reach out!
+        <div class="email-address">${emailAddress}</div>
+      </div>
+      <div class="email-toast-actions">
+        <button class="email-action-btn email-copy-btn" onclick="copyEmailAddress('${emailAddress}', this)">
+          <i class="fas fa-copy"></i>
+          Copy Email
+        </button>
+        <button class="email-action-btn email-open-btn" onclick="openEmailClient('${emailAddress}')">
+          <i class="fas fa-external-link-alt"></i>
+          Open Mail App
+        </button>
+      </div>
+    </div>
+  `;
 
-  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-  submitBtn.disabled = true;
+  container.appendChild(emailToast);
+
+  // Close button functionality
+  const closeBtn = emailToast.querySelector(".toast-close");
+  closeBtn.addEventListener("click", () => {
+    removeEmailToast(emailToast);
+  });
+
+  // Auto remove after 8 seconds
+  const autoRemove = setTimeout(() => {
+    removeEmailToast(emailToast);
+  }, 8000);
+
+  // Pause auto-remove on hover
+  emailToast.addEventListener("mouseenter", () => {
+    clearTimeout(autoRemove);
+  });
+
+  emailToast.addEventListener("mouseleave", () => {
+    setTimeout(() => removeEmailToast(emailToast), 3000);
+  });
+}
+
+// Copy email address function
+function copyEmailAddress(email, button) {
+  navigator.clipboard
+    .writeText(email)
+    .then(() => {
+      const originalContent = button.innerHTML;
+      button.innerHTML = '<i class="fas fa-check"></i> Copied!';
+      button.style.background = "rgba(16, 185, 129, 0.3)";
+
+      setTimeout(() => {
+        button.innerHTML = originalContent;
+        button.style.background = "";
+      }, 2000);
+
+      // Show mini success toast
+      toast.success(
+        "Email Copied!",
+        "Email address has been copied to your clipboard.",
+        3000
+      );
+    })
+    .catch(() => {
+      toast.error(
+        "Copy Failed",
+        "Please manually copy the email address.",
+        3000
+      );
+    });
+}
+
+// Open email client function
+function openEmailClient(email) {
+  window.location.href = `mailto:${email}?subject=Hello from your portfolio visitor`;
+}
+
+// Remove email toast function
+function removeEmailToast(emailToast) {
+  emailToast.style.transform =
+    window.innerWidth <= 480 ? "translateY(-100%)" : "translateX(100%)";
+  emailToast.style.opacity = "0";
 
   setTimeout(() => {
-    alert(
-      "Thank you! Your message has been sent successfully. I'll get back to you soon!"
-    );
-    this.reset();
-    submitBtn.innerHTML = originalText;
-    submitBtn.disabled = false;
-  }, 2000);
-});
+    if (emailToast.parentNode) {
+      emailToast.parentNode.removeChild(emailToast);
+    }
+  }, 400);
+}
+
+// Toast Notification System
+class ToastNotification {
+  constructor() {
+    this.createContainer();
+  }
+
+  createContainer() {
+    if (!document.querySelector(".toast-container")) {
+      const container = document.createElement("div");
+      container.className = "toast-container";
+      document.body.appendChild(container);
+    }
+  }
+
+  show(type, title, message, duration = 5000) {
+    const container = document.querySelector(".toast-container");
+    const toast = document.createElement("div");
+
+    const icon =
+      type === "success" ? "fas fa-check-circle" : "fas fa-exclamation-circle";
+
+    toast.className = `toast ${type}`;
+    toast.innerHTML = `
+      <i class="${icon} toast-icon"></i>
+      <div class="toast-content">
+        <div class="toast-title">${title}</div>
+        <div class="toast-message">${message}</div>
+      </div>
+      <button class="toast-close">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="toast-progress"></div>
+    `;
+
+    container.appendChild(toast);
+
+    // Show toast with animation
+    setTimeout(() => {
+      toast.classList.add("show");
+    }, 100);
+
+    // Close button functionality
+    const closeBtn = toast.querySelector(".toast-close");
+    closeBtn.addEventListener("click", () => {
+      this.remove(toast);
+    });
+
+    // Auto remove after duration
+    const autoRemove = setTimeout(() => {
+      this.remove(toast);
+    }, duration);
+
+    // Pause auto-remove on hover
+    toast.addEventListener("mouseenter", () => {
+      clearTimeout(autoRemove);
+      const progressBar = toast.querySelector(".toast-progress");
+      progressBar.style.animationPlayState = "paused";
+    });
+
+    toast.addEventListener("mouseleave", () => {
+      const remainingTime = this.getRemainingTime(
+        toast.querySelector(".toast-progress")
+      );
+      setTimeout(() => this.remove(toast), remainingTime);
+    });
+
+    return toast;
+  }
+
+  remove(toast) {
+    toast.style.transform =
+      window.innerWidth <= 440 ? "translateY(-100%)" : "translateX(100%)";
+    toast.style.opacity = "0";
+
+    setTimeout(() => {
+      if (toast.parentNode) {
+        toast.parentNode.removeChild(toast);
+      }
+    }, 400);
+  }
+
+  getRemainingTime(progressBar) {
+    const computedStyle = window.getComputedStyle(progressBar);
+    const animationDuration =
+      parseFloat(computedStyle.animationDuration) * 1000;
+    const transform = computedStyle.transform;
+
+    if (transform === "none") return 0;
+
+    const matrix = new WebKitCSSMatrix(transform);
+    const scaleX = matrix.a;
+    return animationDuration * scaleX;
+  }
+
+  success(title, message, duration) {
+    return this.show("success", title, message, duration);
+  }
+
+  error(title, message, duration) {
+    return this.show("error", title, message, duration);
+  }
+}
+
+// Initialize toast system
+const toast = new ToastNotification();
+
+// EmailJS Configuration and Form Handler with Toast Notifications
+(function () {
+  emailjs.init("u6qm0AaZcMJ3apnGt");
+
+  // Form submission handler
+  document
+    .getElementById("contactForm")
+    .addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const submitBtn = document.querySelector(".submit-btn");
+      const originalText = submitBtn.innerHTML;
+
+      // Show loading state
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      submitBtn.disabled = true;
+
+      // Send email using EmailJS
+      emailjs.sendForm("service_lyd0ccp", "template_17cx0el", this).then(
+        function (response) {
+          console.log("SUCCESS!", response.status, response.text);
+
+          // Success toast notification
+          toast.success(
+            "Message Sent Successfully!",
+            "Thank you for reaching out! I'll get back to you as soon as possible."
+          );
+
+          document.getElementById("contactForm").reset();
+
+          // Reset button
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        },
+        function (error) {
+          console.log("FAILED...", error);
+
+          // Error toast notification
+          toast.error(
+            "Message Failed to Send",
+            "Sorry, there was an error sending your message. Please try again or contact me directly."
+          );
+
+          // Reset button
+          submitBtn.innerHTML = originalText;
+          submitBtn.disabled = false;
+        }
+      );
+    });
+})();
 
 // Add active class to navigation links based on scroll position
 window.addEventListener("scroll", () => {
