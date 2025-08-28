@@ -489,28 +489,28 @@ function createParticles() {
 // Floating animation for particles
 const style = document.createElement("style");
 style.textContent = `
-            @keyframes float {
-                0%, 100% {
-                    transform: translateY(0) translateX(0);
-                    opacity: 0;
-                }
-                10%, 90% {
-                    opacity: 1;
-                }
-                50% {
-                    transform: translateY(-100px) translateX(50px);
-                }
-            }
-            
-            .nav-container .links .link a.active {
-                color: #188c43;
-                text-shadow: 0 0 10px rgba(24, 140, 67, 0.5);
-            }
-            
-            .nav-container .links .link a.active::before {
-                width: 100%;
-            }
-        `;
+    @keyframes float {
+        0%, 100% {
+            transform: translateY(0) translateX(0);
+            opacity: 0;
+        }
+        10%, 90% {
+            opacity: 1;
+        }
+        50% {
+            transform: translateY(-100px) translateX(50px);
+        }
+    }
+    
+    .nav-container .links .link a.active {
+        color: #ffffff;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+    }
+    
+    .nav-container .links .link a.active::before {
+        width: 100%;
+    }
+`;
 document.head.appendChild(style);
 
 // Initialize particles
