@@ -384,5 +384,16 @@ rippleStyle.textContent = `
         `;
 document.head.appendChild(rippleStyle);
 
+// Download CV function
+function downloadCV() {
+  const cvUrl = "./assets/files/delosReyes_CV_Refined.pdf";
+  const link = document.createElement("a");
+  link.href = cvUrl;
+  link.download = "Rene_Angelo_de_los_Reyes_CV.pdf"; // The filename for download
+  document.body.appendChild(link);
+  link.click();
+  document.body.removeChild(link);
+}
+
 console.log("Rene Angelo Portfolio - Loaded Successfully!");
 console.log("Typewriter effect fixed for mobile!");

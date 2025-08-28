@@ -93,7 +93,7 @@
     <section class="hero-section" id="home">
         <div class="main-container">
             <div class="image" data-aos="zoom-out" data-aos-duration="3000">
-                <img src="main.jpg" alt="Rene Angelo">
+                <img src="./assets/images/main.jpg" alt="Rene Angelo">
             </div>
             <div class="content">
                 <h1 data-aos="fade-left" data-aos-duration="1500" data-aos-delay="700"><span>Rene Angelo</span><br>de
@@ -104,10 +104,10 @@
                     </span>
                 </div>
                 <p data-aos="flip-down" data-aos-duration="1500" data-aos-delay="1100">
-                    Passionate full-stack developer, UI/UX designer, freelancer, and creative problem solver with
-                    expertise in modern web technologies.
-                    I transform ideas into engaging digital experiences through clean code, innovative design, and
-                    user-centered thinking.
+                    Full-stack developer and UI/UX designer specializing in scalable web applications and user-centered
+                    design solutions. I
+                    deliver robust, maintainable code and intuitive interfaces that drive business objectives and
+                    enhance user engagement.
                 </p>
                 <div class="social-links">
                     <a href="https://github.com/rendznicoy" data-aos="fade-up" data-aos-duration="1500" target="_blank"
@@ -120,7 +120,9 @@
                         target="_blank" data-aos-delay="1600"><i class="fa-brands fa-instagram"></i></a>
                 </div>
                 <div class="btn" data-aos="zoom-in" data-aos-duration="1500" data-aos-delay="1800">
-                    <button onclick="document.getElementById('contact'.scrollIntoView())">Hire me</button>
+                    <button onclick="downloadCV()">
+                        <i class="fas fa-download"></i> Download CV
+                    </button>
                 </div>
             </div>
         </div>
@@ -134,20 +136,22 @@
             </div>
             <div class="about-content" data-aos="fade-up" data-aos-delay="200">
                 <div class="about-image">
-                    <img src="main.jpg" alt="About Rene"> <!--Comeback-->
+                    <img src="./assets/images/main2.jpg" alt="About Rene"> <!--Comeback-->
                 </div>
                 <div class="about-text">
-                    <h3>Full Stack Developer, UI/UX Designer, Freelancer, & Creative Thinker</h3>
+                    <h3>Full-Stack Developer & UI/UX Designer</h3>
                     <p>
-                        With over a year of professional experience in web development and UI/UX designing, I specialize
-                        in creating responsive, user-friendly applications that solve real-world problems. My journey in
-                        technology began with a curiosity for how these things work, which evolved into a passion for
-                        building digital solutions.
+                        Web developer with specialized expertise in full-stack development and user interface and
+                        experience
+                        design. I focus on building
+                        scalable, maintainable applications that deliver measurable business value while maintaining
+                        high usability standards.
                     </p>
                     <p>
-                        I believe in the power of clean, efficient code and thoughtful design. Every project I work on
-                        is an opportunity to learn something new and push the boundaries of what's possible with modern
-                        technology.
+                        I prioritize writing maintainable, scalable code and designing intuitive user interfaces. My
+                        development approach
+                        emphasizes performance optimization, accessibility standards, and adherence to industry best
+                        practices.
                     </p>
                     <div class="about-hightlights">
                         <div class="highlight">
@@ -165,6 +169,14 @@
                         <div class="highlight">
                             <i class="fas fa-users"></i>
                             <span>Team Collaborator</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Security Conscious</span>
+                        </div>
+                        <div class="highlight">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>Continuous Learner</span>
                         </div>
                     </div>
                 </div>
@@ -184,22 +196,35 @@
                         <div class="timeline-year">2021 - 2025</div>
                         <div class="timeline-degree">Bachelor of Science in Computer Science</div>
                         <div class="timeline-school">Visayas State University Main Campus - Baybay City</div>
-                        <div class="timeline-description">
-                            Focused on general computer science principles including algorithms, data structures,
-                            software engineering, and web development.
-                            Earned a best full-stack developer award during my internship / on-the-job training.
-                        </div>
+                        <ul class="timeline-achievements">
+                            <li>Comprehensive curriculum covering <b>algorithms</b>, <b>data structures</b>, and
+                                <b>software engineering</b>
+                                methodologies
+                            </li>
+                            <li>Specialized coursework in <b>web development technologies</b> and <b>modern
+                                    programming</b>
+                                frameworks
+                            </li>
+                            <li>Recognized for outstanding performance in <b>full-stack development</b> during
+                                supervised
+                                internship program
+                            </li>
+                        </ul>
                     </div>
                 </div>
+
                 <div class="timeline-item" data-aos="fade-left">
                     <div class="timeline-content">
                         <div class="timeline-year">2019 - 2021</div>
-                        <div class="timeline-degree">Senior High School - STEM</div>
+                        <div class="timeline-degree">Senior High School - STEM Track</div>
                         <div class="timeline-school">Ormoc City Senior High School</div>
-                        <div class="timeline-description">
-                            Specialized in Science, Technology, Engineering, and Mathematics.
-                            Developed foundation in computer literacy and mathematical problem-solving.
-                        </div>
+                        <ul class="timeline-achievements">
+                            <li>Completed <b>Science</b>, <b>Technology</b>, <b>Engineering</b>, and <b>Mathematics</b>
+                                academic track</li>
+                            <li>Developed <b>analytical thinking</b> and <b>quantitative problem-solving</b> skills</li>
+                            <li>Gained proficiency in <b>computational methods</b> and <b>advanced mathematics</b>
+                                fundamentals</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -216,34 +241,46 @@
                 <div class="timeline-item" data-aos="fade-right">
                     <div class="timeline-content">
                         <div class="timeline-year">Jun 2024 - Aug 2024</div>
-                        <div class="timeline-degree">Internship - Full Stack Developer</div>
+                        <div class="timeline-degree">Full-Stack Developer Intern</div>
                         <div class="timeline-school">Wela School Systems</div>
-                        <div class="timeline-description">
-                            I developed dynamic certificate generation in Frappe using custom print formats with
-                            editable fields, and streamlined
-                            graduation processes with JavaScript and HTML/CSS. I improved reporting efficiency for MV
-                            Gallego Colleges and Chime
-                            Learning School by building tailored Python and Jinja script reports, and enhanced academic
-                            performance tracking through
-                            policy-aligned report card formats using Frappe’s templating engine and JavaScript. I
-                            customized Frappe DocTypes with
-                            server-side Python logic to adapt to unique school workflows, optimized scripts for faster
-                            data access, and maintained
-                            version control with Git/GitHub for collaborative deployments. Additionally, I created clear
-                            technical documentation in
-                            Markdown and HTML to reduce training overhead and support smooth feature adoption.
-                        </div>
+                        <ul class="timeline-achievements">
+                            <li>Developed dynamic certificate generation system using <b>Frappe framework</b> with
+                                custom print
+                                formats and
+                                editable field configurations</li>
+                            <li>Streamlined graduation workflows through <b>JavaScript</b> and <b>CSS</b>
+                                implementations</li>
+                            <li>Built <b>Python</b> and <b>Jinja</b>-based reporting solutions for MV Gallego Colleges
+                                and Chime
+                                Learning School,
+                                improving operational efficiency</li>
+                            <li>Customized <b>Frappe DocTypes</b> with server-side <b>Python</b> logic to accommodate
+                                institution-specific workflows
+                            </li>
+                            <li>Implemented performance optimizations for data access and maintained collaborative
+                                development through
+                                <b>Git & GitHub</b> version control
+                            </li>
+                            <li>Created comprehensive <b>technical documentation</b> to facilitate knowledge transfer
+                                and
+                                system adoption</li>
+                        </ul>
                     </div>
                 </div>
+
                 <div class="timeline-item" data-aos="fade-left">
                     <div class="timeline-content">
                         <div class="timeline-year">2021 - Present</div>
-                        <div class="timeline-degree">Freelancer</div>
-                        <div class="timeline-description">
-                            As a freelancer, I have worked on various projects, honing my skills in web development and
-                            design. I have collaborated with clients to create responsive and user-friendly websites,
-                            command-line interface programs, utilizing modern designs, and technologies.
-                        </div>
+                        <div class="timeline-degree">Independent Web Developer</div>
+                        <ul class="timeline-achievements">
+                            <li>Developed responsive web applications and user interfaces for diverse client
+                                requirements using modern <b>JavaScript</b> frameworks</li>
+                            <li>Created <b>command-line interface</b> programs and custom software solutions</li>
+                            <li>Delivered projects utilizing <b>contemporary design</b> principles and <b>cutting-edge
+                                    development</b> frameworks</li>
+                            <li>Maintained client relationships through <b>effective communication</b> and <b>timely
+                                    project</b> delivery</li>
+                        </ul>
                     </div>
                 </div>
             </div>
@@ -344,7 +381,7 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="project-image">
-                        <img src="main.jpg" alt="Pageant Scoring System">
+                        <img src="./assets/images/main.jpg" alt="Pageant Scoring System">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <span class="project-link disabled" title="Site is not Live"><i
@@ -376,7 +413,7 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="project-image">
-                        <img src="main.jpg" alt="Tally Board Application">
+                        <img src="./assets/images/main.jpg" alt="Tally Board Application">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://github.com/rendznicoy/care-win" class="project-link"
@@ -409,7 +446,7 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="project-image">
-                        <img src="main.jpg" alt="Inventory Management System">
+                        <img src="./assets/images/main.jpg" alt="Inventory Management System">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://simple-inventory-manager.vercel.app/" class="project-link"
@@ -437,7 +474,7 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="500">
                     <div class="project-image">
-                        <img src="main.jpg" alt="Ecommerce Website">
+                        <img src="./assets/images/main.jpg" alt="Ecommerce Website">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://simple-e-commerce-topaz.vercel.app/" class="project-link"
@@ -464,7 +501,7 @@
 
                 <div class="project-card" data-aos="fade-up" data-aos-delay="600">
                     <div class="project-image">
-                        <img src="main.jpg" alt="Bayad System">
+                        <img src="./assets/images/main.jpg" alt="Bayad System">
                         <div class="project-overlay">
                             <div class="project-links">
                                 <a href="https://github.com/josuafalguera/bayad-system" class="project-link"

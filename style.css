@@ -617,10 +617,34 @@ nav.scrolled {
   margin-bottom: 1rem;
 }
 
-.timeline-description {
+.timeline-achievements {
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.timeline-achievements li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
   font-size: 0.9rem;
-  line-height: 1.6;
-  opacity: 0.8;
+  line-height: 1.5;
+  opacity: 0.9;
+}
+
+.timeline-achievements li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.timeline-achievements li:hover {
+  opacity: 1;
+  transform: translateX(5px);
+  transition: all 0.3s ease;
 }
 
 /* Work Section */
@@ -1103,6 +1127,10 @@ nav.scrolled {
 
 /* Responsive Design */
 @media (max-width: 884px) {
+  .social-links {
+    justify-content: center;
+  }
+
   .cancel {
     position: absolute;
     top: 2rem;
@@ -1226,12 +1254,12 @@ nav.scrolled {
   }
 
   .timeline-item::before {
-    left: 2rem;
+    left: 0.15rem;
     transform: translateX(-50%);
   }
 
   .timeline-content {
-    margin: 1rem 0 0 2rem;
+    margin: 0 1rem 0 2rem;
   }
 
   .contact-container {
@@ -1250,6 +1278,10 @@ nav.scrolled {
 }
 
 @media (max-width: 440px) {
+  .social-links {
+    justify-content: center;
+  }
+
   .projects-section {
     padding: 80px 1rem;
   }
