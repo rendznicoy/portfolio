@@ -91,12 +91,7 @@ document.addEventListener("DOMContentLoaded", function () {
 // Typewritter Effect
 
 const typewriter = document.getElementById("typewritter");
-const words = [
-  "Full Stack Developer",
-  "UI/UX Designer",
-  "Problem Solver",
-  "Tech Enthusiast",
-];
+const words = ["Full Stack Developer", "UI/UX Designer", "Tech Enthusiast"];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;

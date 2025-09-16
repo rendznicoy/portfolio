@@ -693,38 +693,6 @@ nav.scrolled {
   color: #ffffff;
 }
 
-/* Skill Level Legend */
-.skill-legend {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin-bottom: 2rem;
-}
-
-.legend-title {
-  text-align: center;
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  color: #ffffff;
-  font-weight: 600;
-}
-
-.legend-items {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1.5rem;
-}
-
-.legend-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.8);
-}
-
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
@@ -801,54 +769,6 @@ nav.scrolled {
   transform: translateY(-3px);
   box-shadow: 0 8px 25px rgba(255, 255, 255, 0.1);
   color: #ffffff;
-}
-
-/* Skill Level Icons */
-.skill-level-icon {
-  font-size: 0.8rem;
-  z-index: 1;
-}
-
-/* Expert Level */
-.skill-expert .skill-level-icon {
-  color: #10b981; /* Green */
-}
-
-/* Advanced Level */
-.skill-advanced .skill-level-icon {
-  color: #3b82f6; /* Blue */
-}
-
-/* Intermediate Level */
-.skill-intermediate .skill-level-icon {
-  color: #f59e0b; /* Yellow/Orange */
-}
-
-/* Novice Level */
-.skill-novice .skill-level-icon {
-  color: #ef4444; /* Red */
-}
-
-/* Learning Level */
-.skill-learning .skill-level-icon {
-  color: #8b5cf6; /* Purple */
-}
-
-/* Legend Icons */
-.legend-expert {
-  color: #10b981;
-}
-.legend-advanced {
-  color: #3b82f6;
-}
-.legend-intermediate {
-  color: #f59e0b;
-}
-.legend-novice {
-  color: #ef4444;
-}
-.legend-learning {
-  color: #8b5cf6;
 }
 
 /* Progress bar */
@@ -1780,10 +1700,6 @@ nav.scrolled {
 
   .skills-section {
     padding: 80px 1rem;
-  }
-
-  .skill-legend {
-    padding: 1rem;
   }
 
   .social-links {
